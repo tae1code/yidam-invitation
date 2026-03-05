@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>조이담 첫돌 초대장</title>
+    <style>
+      :root {
+        --bg: #f6efe4;
+        --title: #5b4a3a;
+        --body: #5b4a3a;
+        --subtle: #7b6a5a;
+        --hairline: #ddcdbb;
+        --accent: #6b5848;
+        --accent-soft: #f3e7d6;
+        --page-max: 28rem;
+        --page-pad: clamp(20px, 5vw, 28px);
+        --space-lg: clamp(20px, 5vw, 28px);
+        --space-md: clamp(16px, 4vw, 24px);
+        --space-sm: clamp(12px, 3vw, 18px);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background:
+          radial-gradient(240px 240px at 12% 6%, rgba(255, 255, 255, 0.5), transparent 65%),
+          radial-gradient(260px 260px at 88% 12%, rgba(255, 255, 255, 0.35), transparent 70%),
+          radial-gradient(220px 220px at 50% 100%, rgba(255, 255, 255, 0.4), transparent 70%),
+          var(--bg);
+        color: var(--body);
+        font-family: "Nanum Myeongjo", "Nanum Brush Script", "Apple SD Gothic Neo",
+          "Noto Serif KR", "Noto Sans KR", serif;
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.6;
+      }
+
+      .page {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        padding: clamp(28px, 7vw, 44px) var(--page-pad) clamp(36px, 8vw, 56px);
+        position: relative;
+      }
+
+      .paper {
+        background:
+          radial-gradient(6px 6px at 18% 22%, rgba(120, 90, 70, 0.08), transparent 70%),
+          radial-gradient(5px 5px at 70% 30%, rgba(120, 90, 70, 0.06), transparent 70%),
+          radial-gradient(4px 4px at 35% 65%, rgba(120, 90, 70, 0.06), transparent 70%),
+          radial-gradient(3px 3px at 80% 75%, rgba(120, 90, 70, 0.05), transparent 70%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+        border: 1px solid var(--hairline);
+        padding: clamp(22px, 6vw, 30px);
+        position: relative;
+      }
+
+      .corner {
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        border: 1px solid var(--hairline);
+        border-radius: 6px;
+        background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.6), transparent 55%);
+      }
+
+      .corner.tl {
+        top: -6px;
+        left: -6px;
+      }
+
+      .corner.tr {
+        top: -6px;
+        right: -6px;
+      }
+
+      .corner.bl {
+        bottom: -6px;
+        left: -6px;
+      }
+
+      .corner.br {
+        bottom: -6px;
+        right: -6px;
+      }
+
+      .badge {
+        position: relative;
+        margin: 0 auto;
+        width: 120px;
+        height: 54px;
+        background: var(--accent);
+        color: #f6efe4;
+        font-weight: 600;
+        text-align: center;
+        line-height: 54px;
+        border-radius: 12px 12px 0 0;
+        letter-spacing: 2px;
+        font-size: clamp(16px, 4.2vw, 18px);
+      }
+
+      .badge::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -18px;
+        width: 0;
+        height: 0;
+        border-left: 18px solid transparent;
+        border-right: 18px solid transparent;
+        border-top: 18px solid var(--accent);
+      }
+
+      .badge::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -32px;
+        transform: translateX(-50%);
+        width: 6px;
+        height: 18px;
+        background: var(--accent);
+        border-radius: 0 0 6px 6px;
+      }
+
+      .title {
+        font-size: clamp(22px, 5vw, 28px);
+        line-height: 1.35;
+        font-weight: 600;
+        color: var(--title);
+        letter-spacing: -0.2px;
+        text-align: center;
+      }
+
+      .photo {
+        margin: var(--space-lg) auto 0;
+        width: 100%;
+        border-radius: 18px;
+        border: 1px solid var(--hairline);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--subtle);
+        font-size: clamp(12px, 3.2vw, 14px);
+        box-shadow: 0 10px 26px rgba(91, 74, 58, 0.12);
+      }
+
+      .photo::before,
+      .photo::after {
+        content: "";
+        position: absolute;
+        width: 72px;
+        height: 72px;
+        background: var(--bg);
+        border-radius: 50%;
+        box-shadow: inset 0 0 0 1px var(--hairline);
+      }
+
+      .photo::before {
+        top: -36px;
+        left: -36px;
+      }
+
+      .photo::after {
+        top: -36px;
+        right: -36px;
+      }
+
+      .photo-frame {
+        position: relative;
+        overflow: hidden;
+        border-radius: 18px;
+      }
+
+      .photo img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+      }
+
+      .copy {
+        margin-top: var(--space-lg);
+        font-size: clamp(14px, 3.8vw, 16px);
+        text-align: center;
+      }
+
+      .info {
+        margin-top: var(--space-lg);
+        font-size: clamp(14px, 3.8vw, 16px);
+        text-align: center;
+      }
+
+      .info .line {
+        margin: 6px 0;
+      }
+
+
+      .map {
+        margin-top: var(--space-md);
+        text-align: center;
+      }
+
+      .parking {
+        margin-top: var(--space-sm);
+        font-size: clamp(12px, 3.2vw, 14px);
+        color: var(--subtle);
+        text-align: center;
+      }
+
+      .map a {
+        display: inline-block;
+        padding: clamp(6px, 2.4vw, 8px) clamp(10px, 3.2vw, 14px);
+        border: 1px solid var(--hairline);
+        border-radius: 8px;
+        text-decoration: none;
+        color: var(--title);
+        font-size: clamp(12px, 3.2vw, 14px);
+        background: #ffffff;
+        box-shadow: 0 6px 14px rgba(91, 74, 58, 0.12);
+      }
+
+      .map a + a {
+        margin-left: 8px;
+      }
+
+      .map a:active {
+        transform: translateY(1px);
+      }
+
+      .divider {
+        margin: var(--space-sm) auto 0;
+        width: 56px;
+        height: 2px;
+        border-radius: 999px;
+        background: var(--hairline);
+      }
+
+      @media (min-width: 768px) {
+        .page {
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="badge">첫돌</div>
+      <section class="paper">
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+
+        <div class="title">조이담 첫돌에 초대합니다</div>
+        <div class="divider"></div>
+
+        <div class="photo-frame">
+          <div class="photo">
+            <img src="main.JPEG" alt="조이담 사진" />
+          </div>
+        </div>
+
+        <div class="copy">
+          <div>소중한 첫번째 생일,</div>
+          <div>따뜻한 축하와 함께해 주세요.</div>
+        </div>
+
+        <div class="info">
+          <div class="line">2026년 3월 21일(토) 오전 11시</div>
+          <div class="line">바이탈바이브 3층</div>
+          <div class="line">서울 강남구 밤고개로34길 14</div>
+        </div>
+
+        <div class="map">
+          <a href="https://naver.me/x4FLnv44" target="_blank" rel="noopener">
+            네이버지도
+          </a>
+          <a href="https://kko.to/1zS4RFRrrJ" target="_blank" rel="noopener">
+            카카오맵
+          </a>
+        </div>
+
+        <div class="parking">
+          주차 안내: 대왕초등학교 공영주차장
+          <br />
+          (서울 강남구 헌릉로618길 8)
+        </div>
+
+      </section>
+    </main>
+  </body>
+</html>
