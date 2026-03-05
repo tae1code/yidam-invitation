@@ -32,8 +32,7 @@
           radial-gradient(220px 220px at 50% 100%, rgba(255, 255, 255, 0.4), transparent 70%),
           var(--bg);
         color: var(--body);
-        font-family: "Nanum Myeongjo", "Nanum Brush Script", "Apple SD Gothic Neo",
-          "Noto Serif KR", "Noto Sans KR", serif;
+        font-family: "바탕체", "바탕", "Batang", "Noto Serif KR", serif;
         -webkit-font-smoothing: antialiased;
         line-height: 1.6;
       }
@@ -92,8 +91,9 @@
         line-height: 1.35;
         font-weight: 600;
         color: var(--title);
-        letter-spacing: -0.2px;
+        letter-spacing: -0.6px;
         text-align: center;
+        font-family: inherit;
       }
 
       .photo {
@@ -149,6 +149,10 @@
         text-align: center;
       }
 
+      .copy .loose {
+        margin-top: 8px;
+      }
+
       .info {
         margin-top: var(--space-lg);
         font-size: clamp(14px, 3.8vw, 16px);
@@ -175,12 +179,12 @@
       .map a {
         display: inline-block;
         padding: clamp(6px, 2.4vw, 8px) clamp(10px, 3.2vw, 14px);
-        border: 1px solid var(--hairline);
+        border: 1px solid #d4c3b0;
         border-radius: 8px;
         text-decoration: none;
-        color: var(--title);
+        color: #4f3f31;
         font-size: clamp(12px, 3.2vw, 14px);
-        background: #ffffff;
+        background: #f0e4d6;
         box-shadow: 0 6px 14px rgba(91, 74, 58, 0.12);
       }
 
@@ -226,8 +230,10 @@
         </div>
 
         <div class="copy">
-          <div>소중한 첫번째 생일,</div>
-          <div>따뜻한 축하와 함께해 주세요.</div>
+          <div>1년동안 건강하게 자라준 이담이가</div>
+          <div>첫번째 생일을 맞이합니다.</div>
+          <div>소중한 날을 함께 축하해주세요.</div>
+          <div class="loose">엄마 이유진 ♥ 아빠 조태원</div>
         </div>
 
         <div class="info">
