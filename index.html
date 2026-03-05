@@ -86,45 +86,6 @@
         right: -6px;
       }
 
-      .badge {
-        position: relative;
-        margin: 0 auto;
-        width: 120px;
-        height: 54px;
-        background: var(--accent);
-        color: #f6efe4;
-        font-weight: 600;
-        text-align: center;
-        line-height: 54px;
-        border-radius: 12px 12px 0 0;
-        letter-spacing: 2px;
-        font-size: clamp(16px, 4.2vw, 18px);
-      }
-
-      .badge::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -18px;
-        width: 0;
-        height: 0;
-        border-left: 18px solid transparent;
-        border-right: 18px solid transparent;
-        border-top: 18px solid var(--accent);
-      }
-
-      .badge::before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        bottom: -32px;
-        transform: translateX(-50%);
-        width: 6px;
-        height: 18px;
-        background: var(--accent);
-        border-radius: 0 0 6px 6px;
-      }
 
       .title {
         font-size: clamp(22px, 5vw, 28px);
@@ -249,7 +210,6 @@
   </head>
   <body>
     <main class="page">
-      <div class="badge">첫돌</div>
       <section class="paper">
         <div class="corner tl"></div>
         <div class="corner tr"></div>
